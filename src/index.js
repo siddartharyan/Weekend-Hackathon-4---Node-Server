@@ -5,8 +5,10 @@ const httpServer = http.createServer(handleServer);
 function handleServer(req, res) {
   if (req.url === "/welcome") {
     res.write("Welcome to Dominos!");
+    res.statusCode = 200;
     res.end();
   } else if (req.url === "/contact") {
+    res.statusCode = 200;
     res.write(
       JSON.stringify({
         phone: "18602100000",
